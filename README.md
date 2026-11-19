@@ -1,7 +1,7 @@
 # Kunden Artikel APP
 ## A Simple ASP.NET CORE Web API
 
-## Architektur Schema**
+## Architektur Schema
 Controller -> Manager -> Business -> Data
 
 # Weiteres
