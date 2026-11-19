@@ -1,13 +1,12 @@
 ﻿using kaapp.API.DTOs.Kunden;
 
-namespace kaapp.API.Business
+namespace kaapp.API.Business;
+
+public interface IKundenBusiness
 {
-	public interface IKundenBusiness
-	{
-		public Task<GetKundenResponseDTO> GetKunden();
-		public Task<GetKundeByIdResponseDTO> GetKunde(int id);
-		public Task<bool> DeleteKunde(int id);
-		public Task<CreateKundeResponseDTO> CreateKunde(CreateKundeRequestDTO request);
-		public Task<bool> IsKundeMitglied(int id);
-	}
+	public Task<GetKundenResponseDTO> GetKunden();
+	public Task<GetKundeByIdResponseDTO> GetKunde(int id);
+	public Task<bool> DeleteKunde(int id);
+	public Task<int> CreateKunde(CreateKundeRequestDTO request);
+	public Task<bool> IsKundeMitglied(int id);
 }

@@ -6,7 +6,7 @@ namespace kaapp.API.Data;
 
 public class KundenData(DatabaseContext databaseContext) : IKundenData
 {
-	public async Task<CreateKundeResponseDTO> CreateKunde(CreateKundeRequestDTO request)
+	public async Task<int> CreateKunde(CreateKundeRequestDTO request)
 	{
 		// Command vorbereiten
 		var command = databaseContext.CreateCommand("INSERT INTO kunden (vorname, nachname, email) " +
@@ -20,12 +20,7 @@ public class KundenData(DatabaseContext databaseContext) : IKundenData
 		// Command ausführen
 		var id = await command.ExecuteScalarAsync(); // Gibt erste Zeile und Spalte zurück
 
-		var result = new CreateKundeResponseDTO()
-		{
-			Id = (int)id // die Datenbank gibt ein objekt zurück daher der Cast
-		};
-
-		return result;
+		return (int)id; // die Datenbank gibt ein Objekt zurück daher der Cast
 	}
 
 	public async Task<bool> DeleteKunde(int id)

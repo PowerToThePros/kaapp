@@ -1,9 +1,9 @@
-using kaapp.API.Data;
-using kaapp.API.Manager;
 using kaapp.API.Business;
-using Scalar.AspNetCore;
+using kaapp.API.Data;
 using kaapp.API.Helpers;
+using kaapp.API.Manager;
 using Npgsql;
+using Scalar.AspNetCore;
 
 // builder ist die bauphase, in der die Anwendung konfiguriert wird
 

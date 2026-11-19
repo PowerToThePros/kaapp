@@ -6,13 +6,13 @@ namespace kaapp.API.Business;
 
 public class KundenBusiness(IKundenData kundenData) : IKundenBusiness
 {
-	public async Task<CreateKundeResponseDTO> CreateKunde(CreateKundeRequestDTO request)
+	public async Task<int> CreateKunde(CreateKundeRequestDTO request)
 	{
-		var result = await kundenData.CreateKunde(request); // Data Schicht Call
+		var newId = await kundenData.CreateKunde(request); // Data Schicht Call
 
 		if (request.Mitglied)
 		{
-			var success = await kundenData.InsertMitglied(result.Id); // Data Schicht Call
+			var success = await kundenData.InsertMitglied(newId); // Data Schicht Call
 
 			if (!success)
 			{
@@ -22,7 +22,7 @@ public class KundenBusiness(IKundenData kundenData) : IKundenBusiness
 			}
 		}
 
-		return result;
+		return newId;
 	}
 
 	public async Task<bool> DeleteKunde(int id)
