@@ -18,6 +18,9 @@ Zum Managen der Datenbank empfehle ich pgAdmin 4
 ## Architektur Schema
 Controller -> Manager -> Business -> Data
 
-### Weiteres
+### Weiteres 
+**! Anwendung muss lokal laufen !**
+
 API Dokumentation erreichbar unter https://localhost:7133/openapi/v1.json
+
 Endpoints Testen unter https://localhost:7133/scalar
